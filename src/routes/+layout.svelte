@@ -36,7 +36,7 @@
 			<Flame class={iconClass} />
 			<span>Routines</span>
 		</BottomNav.Item>
-		<BottomNav.Item href="/exercise">
+		<BottomNav.Item href="/exercises">
 			<Dumbbell class={iconClass} />
 			<span>Exercises</span>
 		</BottomNav.Item>

@@ -7,7 +7,7 @@
 	import * as Dialog from '$lib/components/ui/dialog/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { SvelteSet } from 'svelte/reactivity';
-	import { GeneralMuscleGroup } from '$lib/types/MuscleGroups';
+	// import { GeneralMuscleGroup } from '$lib/types/MuscleGroups';
 	import type { Exercise } from '$lib/types/Exercise';
 	import { Switch } from '$lib/components/ui/switch/index.js';
 	import * as ToggleGroup from '$lib/components/ui/toggle-group/index.js';
@@ -23,10 +23,10 @@
 		includesBodyweight: false,
 		trackingType: 'reps'
 	});
-	const generalMuscles = Object.values(GeneralMuscleGroup);
+	// const generalMuscles = Object.values(GeneralMuscleGroup);
 </script>
 
-<h1>Create Exercise</h1>
+<h2>Create Exercise</h2>
 
 <Label for="name">Name</Label>
 <Input id="name" bind:value={exercise.name} />
@@ -36,7 +36,7 @@
 	<Badge>{smg}</Badge>
 {/each}
 
-<Dialog.Root>
+<!-- <Dialog.Root>
 	<Dialog.Trigger class={buttonVariants({ variant: 'default' })}
 		>Select Primary Muscles</Dialog.Trigger
 	>
@@ -69,7 +69,7 @@
 			</ScrollArea>
 		</Dialog.Header>
 	</Dialog.Content>
-</Dialog.Root>
+</Dialog.Root> -->
 
 <Label for="primary-muscles">Secondary Muscles</Label>
 {#each secondarySelectedMuscleGroups as smg}

@@ -2,6 +2,8 @@
 	import type { Exercise } from '@/types/Exercise';
 	import * as Item from '$lib/components/ui/item/index.js';
 	import { Badge, badgeVariants } from '$lib/components/ui/badge/index.js';
+	import { Equipment } from '@/types/Equipment';
+	import { Button } from '$lib/components/ui/button/index.js';
 
 	const mockExercises: Exercise[] = [
 		{
@@ -29,19 +31,23 @@
 	{#each mockExercises as me}
 		<Item.Root variant="muted">
 			<Item.Content>
-				<Item.Title>{me.name}</Item.Title>
+				<Item.Title><p class="text-xl">{me.name}</p></Item.Title>
 				<Item.Description>
 					<div class="flex flex-col gap-2">
 						<div class="flex gap-1">
 							{#each me.primaryMuscles as pm}
-								<Badge>{pm}</Badge>
+								<Badge class="text-[10px]">{pm}</Badge>
 							{/each}
-						</div>
-						<div class="flex gap-1">
 							{#each me.secondaryMuscles as sm}
-								<Badge class={badgeVariants({ variant: 'secondary' })}>{sm}</Badge>
+								<Badge class="bg-neutral-400 text-[10px]">{sm}</Badge>
 							{/each}
 						</div>
+						{#each me.equipment as e}
+							<Badge class="bg-orange-200 text-[10px]">{e}</Badge>
+						{/each}
+						{#each me.equipment as e}
+							<Badge class="bg-orange-200 text-[10px]">{e}</Badge>
+						{/each}
 					</div>
 				</Item.Description>
 			</Item.Content>
@@ -49,3 +55,4 @@
 		</Item.Root>
 	{/each}
 </div>
+<Button href="/exercises/new" size="sm" class="w-full">Create Exercise</Button>
