@@ -22,7 +22,7 @@
 >
 
 <ModeWatcher />
-<div class="px-3">
+<div class="flex flex-col gap-5 px-3">
 	{@render children()}
 </div>
 
