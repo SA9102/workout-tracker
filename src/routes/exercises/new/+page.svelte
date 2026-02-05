@@ -7,6 +7,7 @@
 	import { Switch } from '$lib/components/ui/switch/index.js';
 	import * as ToggleGroup from '$lib/components/ui/toggle-group/index.js';
 	import { Separator } from '$lib/components/ui/separator/index.js';
+	import { addExercise } from '../../../stores/exercises.svelte';
 
 	import SelectMusclesDialog from '$lib/components/custom/SelectMusclesDialog.svelte';
 
@@ -19,7 +20,9 @@
 		trackingType: 'reps'
 	});
 
-	$inspect(exercise);
+	let lastTrackingType = 'reps';
+
+	//$inspect(exercise);
 </script>
 
 <h2>Create Exercise</h2>
@@ -75,7 +78,25 @@
 <Separator />
 
 <Label>Tracking Method</Label>
-<ToggleGroup.Root variant="outline" type="single" bind:value={exercise.trackingType}>
+<ToggleGroup.Root
+	type="single"
+	bind:value={exercise.trackingType}
+	variant="outline"
+	onValueChange={(v) => {
+		if (v === '') {
+			exercise.trackingType = lastTrackingType;
+		} else {
+			lastTrackingType = v;
+			exercise.trackingType = v;
+		}
+	}}
+>
 	<ToggleGroup.Item value="reps" aria-label="Toggle bold">Reps</ToggleGroup.Item>
 	<ToggleGroup.Item value="duration" aria-label="Toggle italic">Duration</ToggleGroup.Item>
 </ToggleGroup.Root>
+<Button
+	onclick={() => {
+		addExercise(exercise);
+		console.log('Added');
+	}}>Save</Button
+>
