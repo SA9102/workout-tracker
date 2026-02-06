@@ -1,13 +1,15 @@
-export enum Equipment {
-	Barbell = 'Barbell',
-	Dumbbells = 'Dumbbells',
-	Rings = 'Rings',
-	StraightBar = 'Straight Bar',
-	ParallelBars = 'Parallel Bars',
-	ConvergingVBars = 'Converging V-Bars',
-	DivergingVBars = 'Diverging V-Bars',
-	ResistanceBands = 'ResistanceBands',
-	FlatBench = 'Flat Bench',
-	InclineBench = 'Incline Bench',
-	DeclineBench = 'Decline Bench'
-}
+export const EQUIPMENT = [
+	'Barbell',
+	'Dumbbells',
+	'Rings',
+	'Straight Bar',
+	'Parallel Bars',
+	'Converging V-Bars',
+	'Diverging V-Bars',
+	'Resistance Bands',
+	'Flat Bench',
+	'Incline Bench',
+	'Decline Bench'
+] as const;
+
+export type Equipment = (typeof EQUIPMENT)[number];

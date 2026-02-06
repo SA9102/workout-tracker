@@ -8,24 +8,6 @@
 	import { getExercises } from '../../stores/exercises.svelte';
 
 	const exercises = getExercises();
-	// const mockExercises: Exercise[] = [
-	// 	{
-	// 		name: 'Dips',
-	// 		primaryMuscles: ['Chest', 'Triceps'],
-	// 		secondaryMuscles: ['Shoulders'],
-	// 		equipment: ['Rings'],
-	// 		includesBodyweight: true,
-	// 		trackingType: 'reps'
-	// 	},
-	// 	{
-	// 		name: 'Pull Ups',
-	// 		primaryMuscles: ['Lats'],
-	// 		secondaryMuscles: ['Forearms'],
-	// 		equipment: ['Straight Bar'],
-	// 		includesBodyweight: true,
-	// 		trackingType: 'reps'
-	// 	}
-	// ];
 </script>
 
 <h1>Exercises</h1>
