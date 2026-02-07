@@ -2,7 +2,7 @@
 	import type { Exercise } from '@/types/Exercise';
 	import * as Item from '$lib/components/ui/item/index.js';
 	import { Badge, badgeVariants } from '$lib/components/ui/badge/index.js';
-	import { Equipment } from '@/types/Equipment';
+	import { type Equipment } from '$lib/types/Equipment';
 	import { Button } from '$lib/components/ui/button/index.js';
 
 	import { getExercises } from '../../stores/exercises.svelte';

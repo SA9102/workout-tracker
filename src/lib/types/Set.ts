@@ -1,5 +1,6 @@
 export type Set = {
-	reps: number;
+	reps?: number;
+	duration?: number;
 	tempo: string;
 	rir: number;
 };

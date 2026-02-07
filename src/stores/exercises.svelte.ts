@@ -2,6 +2,7 @@ import type { Exercise } from '@/types/Exercise';
 
 let exercises: Exercise[] = $state([
 	{
+		id: '1',
 		name: 'Dips',
 		primaryMuscles: ['Chest', 'Triceps'],
 		secondaryMuscles: ['Shoulders'],
@@ -10,6 +11,7 @@ let exercises: Exercise[] = $state([
 		trackingType: 'reps'
 	},
 	{
+		id: '2',
 		name: 'Pull Ups',
 		primaryMuscles: ['Lats'],
 		secondaryMuscles: ['Forearms'],
